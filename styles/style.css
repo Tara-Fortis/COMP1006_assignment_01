@@ -1,1 +1,35 @@
 @charset "UTF-08";
+
+html {
+    font-family: sans-serif;
+  }
+
+  body {
+    line-height: 1.4;
+  }
+
+  /*Table styling*/
+  table {
+    table-layout: auto;
+    border-collapse: collapse;
+    border: 2px solid darkblue;
+    font-size: 1rem;
+  }
+  td {
+    border-collapse: collapse;
+    border: 1px solid blueviolet;
+  }
+  
+  tr th {
+    background-color: darkblue;
+    color: white;
+  }
+  
+  tr td {
+    background-color: lavender;
+    text-align: center;
+  }
+
+  th, td {
+    padding: 0.5rem;
+  }
