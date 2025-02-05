@@ -20,30 +20,47 @@
                 <!-- Author's name  #authorname-->
                 <fieldset>
                     <p>
-                        <label for="authorname">Author *</label>
-                        <input type="text" name="fname" id="authorname" placeholder="First Name" required>
-                        <input type="text" name="lname" id="authorname" placeholder="Last Name" required>
+                        <label>Author *
+                            <input type="text" id="fname" name="authorname" placeholder="First Name" required>
+                            <input type="text" id="lname" name="authorname" placeholder="Last Name" required>
+                        </label>
                     </p>
                 </fieldset>
                 <!-- Book title -->
                 <fieldset>
                     <p>
-                        <label>Book Title *</label>
-                        <input type="text" required>
+                        <lable for="bookTitle">Book Title *</label>
+                        <input type="text" name="bookTitle" required>
                     </p>
                 </fieldset>
                 <!-- Genre -->
                 <fieldset>
                     <p>
-                        <label>Genre *</label>
-                        <input type="text" required>
+                        <label for="genreId">Genre *</label>
+                        <select name="genreId" required>
+                            <?php
+                            // connect
+                                include('shared/db.php');
+                                //fetch and store genre list from the database
+                                $sql = "SELECT * FROM genre_list ORDER BY name";
+                                $cmd = $db->prepare($sql);
+                                $cmd->execute();
+                                $genres = $cmd->fetchAll();
+                                //add each genre to dropdown
+                                foreach ($genres as $genre) {
+                                    echo '<option value="' . $genre['genreId']  . '">' . $genre['name'] . '</option>';
+                                }
+
+                                //disconnect
+                                $db = null;
+                            ?>
+                        </select>
                     </p>
                 </fieldset>
                 <!-- Progress Bar-->
                 <fieldset>
                     <p>
-                        <label for="book-progress">Progress</label>
-                        <br>
+                        <label for="book-progress">Progress <p id="pBar"></p></label>
                         <input
                             type="range"
                             name="book-progress"
@@ -59,7 +76,7 @@
                 <fieldset>
                     <p>
                         <label for="completed">Completed</label>
-                        <input type="checkbox" name="completed">
+                        <input type="checkbox" id="completed">
                     
                     </p>
                     <button>Submit</button>
