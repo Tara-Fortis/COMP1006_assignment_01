@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>saving your submission...</title>
-    <link href="styles/normalize.css" rel="stylesheet">
-    <link href="styles/style.css" rel="stylesheet">
-</head>
-<body>
     <?php
+    $title = 'saving your entry...';
+    include('shared/nav-bar.php');
     // form inputs into variables
     $authorFirstName = $_POST['authorFirstName'];
     $authorLastName = $_POST['authorLastName'];
@@ -49,9 +41,5 @@
 
     echo'Your book was saved';
     ?>
-
-   
-    
     <a href="reading-list.php">view reading list</a>
-</body>
-</html>
+    <?php include('shared/footer.php');?>

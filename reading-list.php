@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="styles/normalize.css" rel="stylesheet">
-    <link href="styles/style.css" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <?php include('shared/nav-bar.php')?>
-    </header>
+        <?php
+        $title = 'reading list';
+        include('shared/nav-bar.php')
+        ?>
     <main>
+        <h1>Your Reading List</h1>
         <?php include('shared/db.php');
         $sql = "SELECT * FROM reading_record";
         $cmd = $db->prepare($sql);
         $cmd->execute();
         $readingRecords = $cmd->fetchAll();
-        echo "<table><caption>My Reading List</caption><thead><tr><th>Author's First Name</th><th>Author's Last Name</th><th>Book Title</th><th>Genre ID</th><th>Progress</th><th>Completed</th></tr></thead>";
+        echo "<table><thead><tr><th>Author's First Name</th><th>Author's Last Name</th><th>Book Title</th><th>Genre ID</th><th>Progress</th><th>Completed</th></tr></thead>";
         foreach ($readingRecords as $readingRecord) {
             echo '<tbody><tr>';
             echo '<td>'. $readingRecord['authorFirstName'] . '</td>';
@@ -35,16 +27,12 @@
         $cmd->execute();
         $genreNames = $cmd->fetchAll();
         echo '<h3>Genre List</h3>';
-        echo '<ul>';
+        echo '<ol>';
         foreach ($genreNames as $genreName){
             echo '<li>' . $genreName['name'] . '</li>';
         }
-        echo '</ul>';
+        echo '</ol>';
         $db = null;
         ?>
     </main>
-    <footer>
-
-    </footer>
-</body>
-</html>
+    <?php include('shared/footer.php');?>

@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Reading Record</title>
-        <link href="styles/normalize.css" rel="stylesheet">
-        <link href="styles/style.css" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <?php include('shared/nav-bar.php') ?>
-        </header>
+            <?php
+            $title = 'Home';
+            include('shared/nav-bar.php');
+            ?>
         <main>
             <h1>My Reading Record</h1>
             <h2>Enter your book information here:</h2>
@@ -19,20 +10,40 @@
                 <!-- Author's name  #authorname-->
                 <fieldset>
                     <label for="fname">Author First Name* </label>
-                    <input type="text" id="fname" name="authorFirstName" placeholder="First Name" maxlength="25" required>
+                    <input 
+                        type="text" 
+                        id="fname" 
+                        name="authorFirstName" 
+                        placeholder="First Name" 
+                        maxlength="25" 
+                        required>
 
                     <label for="lname">Author Last Name* </label>
-                    <input type="text" id="lname" name="authorLastName" placeholder="Last Name" maxlength="25" required>
+                    <input 
+                        type="text" 
+                        id="lname" 
+                        name="authorLastName" 
+                        placeholder="Last Name" 
+                        maxlength="25" 
+                        required>
                 </fieldset>
                 <!-- Book title -->
                 <fieldset>
                     <label for="Title">Book Title *</label>
-                    <input type="text" name="bookTitle" id="Title" required>
+                    <input 
+                        type="text" 
+                        name="bookTitle" 
+                        id="Title"
+                        placeholder="Title"
+                        required>
                 </fieldset>
                 <!-- Genre -->
                 <fieldset>
                     <label for="genre">Genre *</label>
-                    <select id="genre" name="genre_id" required>
+                    <select 
+                        id="genre" 
+                        name="genre_id" 
+                        required>
                         <?php
                         // connect
                             include('shared/db.php');
@@ -68,14 +79,14 @@
                 </fieldset>
                 <fieldset>
                     <label for="y_n">Completed</label>
-                    <input type="checkbox" id="y_n" name="completed">
+                    <input 
+                        type="checkbox" 
+                        id="y_n" 
+                        name="completed">
+                    <br>
                     <button>Submit</button>
                 </fieldset>
             </form>
            
         </main>
-        <footer>
-            
-        </footer>
-    </body>
-</html>
+        <?php include('shared/footer.php');?>
