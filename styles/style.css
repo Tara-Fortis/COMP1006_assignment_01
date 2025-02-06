@@ -12,6 +12,7 @@ nav > ul {
     padding: 20px;
     list-style-type: none;
     justify-content: space-between;
+    box-shadow: 0 3px 5px 0 #453f374f;
 }
 
 /*===========Page Styling===========*/
@@ -19,7 +20,7 @@ nav > ul {
     width: 90%;
     background-color: white;
     margin: 50px auto;
-    box-shadow: 0 5px 5px 0 #000000bf;
+    box-shadow: 0 0 5px 0 #000000;
 }
 main {
     padding: 0 5%;
