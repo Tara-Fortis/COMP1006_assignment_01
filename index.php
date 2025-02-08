@@ -7,7 +7,7 @@
             <h2>Enter your book information here:</h2>
             <form method="post" action="saving.php">
                 
-                <!-- Author's name  #authorname-->
+                <!-- Author's first name  #fname-->
                 <fieldset>
                     <label for="fname">Author First Name* </label>
                     <input 
@@ -17,7 +17,7 @@
                         placeholder="First Name" 
                         maxlength="25" 
                         required>
-
+                <!-- Author's last name  #lname -->
                     <label for="lname">Author Last Name* </label>
                     <input 
                         type="text" 
@@ -71,11 +71,10 @@
                         name="progress"
                         id="book-progress"
                         min="0"
-                        Max="100"
-                        step="25">
-                    <output for="book-progress"></output>
+                        max="100"
+                        step="20">
                     <!--Progress bar value here-->
-                    <p id="progress-value"></p>
+                    <output id="value"></output>
                 </fieldset>
                 <fieldset>
                     <label for="y_n">Completed</label>

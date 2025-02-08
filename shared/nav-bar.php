@@ -6,6 +6,7 @@
     <title><?php $title ?></title>
     <link href="styles/normalize.css" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet">
+    <script src="script.js"defer></script>
   </head>
   <body id="page">
     <header>
