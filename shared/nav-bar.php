@@ -12,8 +12,8 @@
     <header>
       <nav>
         <ul>
-            <li><a href="/assignment_01/index.php">Home</a></li>
-            <li><a href="/assignment_01/reading-list.php">Reading List</a></li>
+            <li><a href="/~Tineil200299153/assignment_01/index.php">Home</a></li>
+            <li><a href="/~Tineil200299153/assignment_01/reading-list.php">Reading List</a></li>
         </ul>
         
       </nav>
