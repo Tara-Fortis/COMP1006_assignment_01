@@ -26,7 +26,7 @@
         $cmd = $db->prepare($sql);
         $cmd->execute();
         $genreNames = $cmd->fetchAll();
-        echo '<h3>Genre List</h3>';
+        echo '<h2>Genre List</h2>';
         echo '<ol>';
         foreach ($genreNames as $genreName){
             echo '<li>' . $genreName['name'] . '</li>';

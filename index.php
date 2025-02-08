@@ -15,8 +15,9 @@
                         id="fname" 
                         name="authorFirstName" 
                         placeholder="First Name" 
-                        maxlength="25" 
-                        required>
+                        maxlength="25"
+                        required
+                        >
                 <!-- Author's last name  #lname -->
                     <label for="lname">Author Last Name* </label>
                     <input 
@@ -24,8 +25,9 @@
                         id="lname" 
                         name="authorLastName" 
                         placeholder="Last Name" 
-                        maxlength="25" 
-                        required>
+                        maxlength="25"
+                        required
+                        >
                 </fieldset>
                 <!-- Book title -->
                 <fieldset>
@@ -34,8 +36,10 @@
                         type="text" 
                         name="bookTitle" 
                         id="Title"
+                        maxlength="70"
                         placeholder="Title"
-                        required>
+                        required
+                        >
                 </fieldset>
                 <!-- Genre -->
                 <fieldset>
@@ -43,7 +47,8 @@
                     <select 
                         id="genre" 
                         name="genre_id" 
-                        required>
+                        required
+                        >
                         <?php
                         // connect
                             include('shared/db.php');
@@ -83,9 +88,9 @@
                         id="y_n" 
                         name="completed">
                     <br>
-                    <button>Submit</button>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Clear</button>
                 </fieldset>
             </form>
-           
         </main>
         <?php include('shared/footer.php');?>
